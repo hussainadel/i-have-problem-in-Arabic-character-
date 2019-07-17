@@ -1,0 +1,229 @@
+<!DOCTYPE html >
+
+<html>
+ <html lang="ar" dir='ltl'>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"></script>
+<link rel="stylesheet" href="/print.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+        crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+<meta charset='utf-8'>
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: 'Cairo', sans-serif;
+
+}
+
+/* body {
+    background: url(/assa.jpg) no-repeat ;
+    position: absolute;
+    z-index: 10;
+} */
+h1 {
+    text-align: center;
+    background-color: cadetblue;
+    padding: 10px;
+}
+
+canvas {
+    width: 100%;
+}
+
+#btn {
+    position: relative;
+    font-size: 1.3rem;
+    left: 50%;
+    right: 50%;
+    align-items: center;
+    padding: 10px;
+}
+
+.fin {
+    background: no-repeat cover center;
+    
+}
+.finl{
+    background-color: #F0F0F1; 
+    color: #00cc65; 
+
+}
+
+.finl img {
+    position: relative;
+    z-index: 0;
+    height: 700px;
+    width: 1100px;
+}
+
+#rqm1 {
+    max-width: 600px;
+    overflow: hidden;
+    color: black;
+    position: absolute;
+    letter-spacing: 5px;
+    top: 150px;
+    left: 500px;
+    font-size: 140px;
+}
+
+#moh1 {
+    max-width: 600px;
+    overflow: hidden;
+    color: black;
+    position: absolute;
+    top: 500px;
+    left: 720px;
+    font-size: 100px;
+}
+
+#no31{
+    position: absolute;
+    font-size: 90px;
+    top: 500px;
+    left: 230px;
+    z-index: 1;
+    color: black;
+}
+</style>
+</head>
+<body >
+
+           
+    <div >
+       
+        ادخل الرقم     <input type="text" id="rqm"  > <input type="button" value="اضغط هنا"  onclick="cli();" >
+         اختر المحافظة  <select name="" id="moh" onchange="aq1();">
+                                <option  value=""></option>
+                                <option  value="اربيل">اربيل</option>
+                                <option value="الانبار">الانبار</option>
+                                <option value="بابل">بابل</option>
+                                <option value="بغداد">بغداد</option>
+                                <option value="البصرة">البصرة</option>
+                                <option value="دهوك">دهوك</option>
+                                <option value="الديوانية">الديوانية</option>
+                                <option value="ديالى">ديالى</option>
+                                <option value="ذي قار">ذي قار</option>
+                                <option value="السليمانية"> السليمانية </option>
+                                <option value="صلاح الدين">صلاح الدين</option>
+                                <option value="كركوك">كركوك</option>
+                                <option value="كربلاء">كربلاء</option>
+                                <option value="المثنى">المثنى</option>
+                                <option value="ميسان">ميسان</option>
+                                <option value="النجف">النجف</option>
+                                <option value="نينوى">نينوى</option>
+                                <option value="واسط">واسط</option>
+                                
+                        </select>
+
+                        <select name="" id="no3" onchange="NOQ1()">
+                            اختر النوع
+                            <OPtion></OPtion>
+                            <option value="خصوصي">خصوصي</option>
+                            <option value="اجرة">اجرة</option>
+                        </select>
+                          <button type="button" onclick="printJS('printJS-form', 'html')">
+                            Print Form
+                        </button>
+            
+    </div>
+    <!-- id="html-content-holder " -->
+    <!-- id="printJS-form" -->
+<div  class="finl"  id="html-content-holder" >
+        <img src="/assa.jpg" alt="">
+        <p id="rqm1"></p>
+   
+        <p id="moh1"></p>
+
+        <p id="no31"></p>
+   
+    </div>
+
+    <input id="btn-Preview-Image" type="button" value="معاينة"/>
+    <a id="btn-Convert-Html2Image" href="#">تنزيل</a>
+    <br/>
+
+    <h3>معاينة الرقم قبل الطباعة :</h3>
+    <div id="previewImage">
+    </div>
+
+
+<script charset=utf-8">
+
+var can = document.querySelector("#canv");
+var c = can.getContext("2d");  
+
+
+
+
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+
+function cli (){
+    var x = document.getElementById("rqm").value;
+    var y = document.getElementById("rqm1").innerHTML += x;
+  return
+}
+
+function aq1 (){
+    var q = document.getElementById("moh").value;
+    var w = document.getElementById("moh1").innerHTML += q;
+
+    return
+}
+
+function NOQ1(){
+    var e = document.getElementById("no3").value;
+    var r = document.getElementById("no31").innerHTML += e;
+
+    return
+}
+
+
+
+
+</script>
+
+<script charset="utf-8" type="text/javascript">
+$(document).ready(function(){
+
+	
+var element = $("#html-content-holder"); // global variable
+var getCanvas; // global variable
+ 
+    $("#btn-Preview-Image").on('click', function () {
+         html2canvas(element, {
+         onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                getCanvas = canvas;
+             }
+         });
+    });
+
+	$("#btn-Convert-Html2Image").on('click', function () {
+    var imgageData = getCanvas.toDataURL("image/png");
+    // Now browser starts downloading it instead of just showing it
+    var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+	});
+
+});
+
+</script>
+ <script src="/print.min.js"></script>
+</body>
+</html>
